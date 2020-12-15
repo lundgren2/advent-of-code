@@ -2,7 +2,8 @@
   "compilerOptions": {
     "module": "commonjs",
     "strict": true,
-    "types": ["node", "mocha", "jest"]
+    "types": ["node", "mocha", "jest"],
+    "downlevelIteration": true
   },
   "include": ["src"]
 }

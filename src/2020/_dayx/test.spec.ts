@@ -3,8 +3,8 @@ import {readInput} from '../../utils';
 
 describe('Advent of Code 2020 - Day x', () => {
   describe('part 1', () => {
-    it('should output x ', async () => {
-      const input = await readInput(__dirname + '/test_input');
+    it('should output x ', () => {
+      const input = 'test';
       expect(part1(input)).toBe('test');
     });
 
