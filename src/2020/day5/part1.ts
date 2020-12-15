@@ -1,32 +1,23 @@
-const calculateBSP = (
-  sequence: string,
-  low: number,
-  high: number,
-  lowerHalfChar: string,
-  upperHalfChar: string
-) => {
-  for (const char of sequence) {
+const calculateBSP = (sequence: string) => {
+  let low = 0;
+  let high = sequence.length > 3 ? 127 : 7; // rows or columns
+
+  const binarySequence = [...sequence].map(c => c === 'F' || c === 'L'); // replace with 1 or 0
+  for (const char of binarySequence) {
     const half = (high - low) / 2;
-    if (char === lowerHalfChar) {
-      high = Math.floor(high - half);
-    } else if (char === upperHalfChar) {
-      low = Math.ceil(low + half);
-    } else {
-      throw new TypeError(`Invalid characher ${char}`);
-    }
+    char ? (high -= Math.floor(half)) : (low += Math.ceil(half));
   }
   return low;
 };
 
-export const part1 = (input: string) => {
-  const seatIds = input.split('\n').map(boardingPass => {
-    // FBFBBFFRLR
+export const calculateSeatIds = (input: string) => {
+  return input.split('\n').map(boardingPass => {
     const rowSequence = boardingPass.slice(0, 7);
     const columnSequence = boardingPass.slice(7, 10);
-    const row = calculateBSP(rowSequence, 0, 127, 'F', 'B');
-    const column = calculateBSP(columnSequence, 0, 7, 'L', 'R');
+    const row = calculateBSP(rowSequence);
+    const column = calculateBSP(columnSequence);
     return row * 8 + column;
   });
-
-  return Math.max(...seatIds); // Return the highest value in the array
 };
+
+export const part1 = (input: string) => Math.max(...calculateSeatIds(input));

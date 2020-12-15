@@ -1,8 +1,12 @@
 import {part1} from './part1';
 import {readInput} from '../../utils';
+import {part2} from './part2';
 
 describe('Advent of Code 2020 - Day 5', () => {
-  describe('utils', () => {});
+  let input: string;
+  beforeAll(async () => {
+    input = await readInput(__dirname + '/input');
+  });
 
   describe('part 1', () => {
     it('should output 357 for FBFBBFFRLR', () => {
@@ -25,9 +29,13 @@ describe('Advent of Code 2020 - Day 5', () => {
       expect(part1(input)).toBe(820);
     });
 
-    it('should output 953 from input', async () => {
-      const input = await readInput(__dirname + '/input');
+    it('should output 953 from input', () => {
       expect(part1(input)).toBe(953);
+    });
+  });
+  describe('part 2', () => {
+    it('should output your seat ID from input', () => {
+      expect(part2(input)).toBe(615);
     });
   });
 });
