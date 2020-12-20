@@ -1,7 +1,7 @@
 const isValid = (nextNumber: number, arrayToCompare: number[]) => {
   const arrayLength = arrayToCompare.length;
   for (let i = 0; i < arrayLength; i++) {
-    for (let j = 1; j < arrayLength; j++) {
+    for (let j = i + 1; j < arrayLength; j++) {
       const a = arrayToCompare[i];
       const b = arrayToCompare[j];
       if (a + b === nextNumber && a !== b) return true;
