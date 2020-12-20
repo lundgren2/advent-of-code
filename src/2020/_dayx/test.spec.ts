@@ -1,5 +1,6 @@
-import {part1} from './part1';
 import {readInput} from '../../utils';
+
+import {part1} from './part1';
 
 describe('Advent of Code 2020 - Day x', () => {
   let input: string;
