@@ -2,7 +2,7 @@ type Bags = Record<string, string[]>;
 
 const parseColor = (rule: string) => rule.replace(/\d|bag(s?.)?/g, '').trim();
 
-const parseBags = (input: string): Bags => {
+export const parseBags = (input: string): Bags => {
   return input.split('\n').reduce((bags, r) => {
     const [, color, rules] = r.match(/([a-z]+ [a-z]+) bags contain (.*)/)!;
     return {...bags, [color]: rules.split(', ')};
