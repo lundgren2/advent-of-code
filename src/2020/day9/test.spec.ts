@@ -1,6 +1,7 @@
 import {readInput} from '../../utils';
 
 import {part1} from './part1';
+import {part2} from './part2';
 
 describe('Advent of Code 2020 - Day 9', () => {
   let input: string;
@@ -35,6 +36,16 @@ describe('Advent of Code 2020 - Day 9', () => {
 
     it('should output 50047984 from input', () => {
       expect(part1(input, 25)).toBe(50047984);
+    });
+  });
+
+  describe('part 2', () => {
+    it('should output 62', () => {
+      expect(part2(testInput, 5)).toBe(62);
+    });
+
+    it('should output 5407707 from input', () => {
+      expect(part2(input, 25)).toBe(5407707);
     });
   });
 });
