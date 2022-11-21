@@ -10,7 +10,7 @@ describe('Advent of Code 2021 - Day x', () => {
 
   describe('part 1', () => {
     it('should output x ', () => {
-      const test_input = 'test';
+      const test_input = `test`;
       expect(part1(test_input)).toBe('test');
     });
 
