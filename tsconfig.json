@@ -1,9 +1,20 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "types": ["bun-types", "jest", "mocha"],
+    "lib": ["ESNext"],
+    "baseUrl": "./src",
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "allowJs": true,
     "strict": true,
-    "types": ["node", "mocha", "jest"],
-    "downlevelIteration": true
-  },
-  "include": ["src"]
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true
+  }
 }

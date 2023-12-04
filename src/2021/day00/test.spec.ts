@@ -1,3 +1,4 @@
+import {expect, describe, beforeAll, it} from 'bun:test';
 import {readInput} from '../../utils';
 
 import {part1} from './part1';

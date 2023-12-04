@@ -1,5 +1,3 @@
-import {promises} from 'fs';
-
-export const readInput = async (file: string) => {
-  return await promises.readFile(file).then((res) => String(res));
-};
+export async function readInput(file: string): Promise<string> {
+  return Bun.file(file).text();
+}
