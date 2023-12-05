@@ -1,3 +1,3 @@
 export function part1(input: string): string {
-  return 'test';
+  return input;
 }
