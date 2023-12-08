@@ -20,3 +20,28 @@ export function part1(input: string): number {
   // [ true, true, false, false, true ]
   return validGames.reduce((acc, val, i) => (val ? acc + (i + 1) : acc), 0);
 }
+
+export function part2(input: string): number {
+  const games = input.split('\n');
+
+  const validGames = games.map((game, i) => {
+    const maxCubes = {red: 0, green: 0, blue: 0};
+    const subsets = game.split(': ')[1].split('; ');
+
+    subsets.forEach(subset => {
+      const sets = subset.split(', ');
+      return sets.map(set => {
+        const [amount, color] = set.split(' ');
+        const currentMax = maxCubes[color as keyof typeof maxCubes];
+        if (Number(amount) > currentMax) {
+          maxCubes[color as keyof typeof maxCubes] = Number(amount);
+        }
+      });
+    });
+
+    return maxCubes.red * maxCubes.green * maxCubes.blue;
+  });
+
+  const result = validGames.reduce((acc, val) => acc + val, 0);
+  return result;
+}
