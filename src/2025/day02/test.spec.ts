@@ -21,7 +21,7 @@ describe('Advent of Code 2025 - Day 2', () => {
       expect(part2(testInput)).toBe(4174379265);
     });
     test('should output correct from input (part2)', () => {
-      expect(part2(input)).toBe(-1);
+      expect(part2(input)).toBe(58961152806);
     });
   });
 });

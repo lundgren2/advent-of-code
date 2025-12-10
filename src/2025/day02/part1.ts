@@ -2,7 +2,7 @@ const getStartEnd = (range: string) => range.split('-').map(Number);
 
 export function part1(input: string) {
   const ranges = input.trimEnd().split(',');
-  const invalidIDs = [];
+  const invalidIds = [];
 
   for (const range of ranges) {
     const [start, end] = getStartEnd(range);
@@ -10,9 +10,9 @@ export function part1(input: string) {
       const id = i.toString();
       const first = id.slice(0, id.length / 2);
       const last = id.slice(id.length / 2);
-      if (first === last) invalidIDs.push(i);
+      if (first === last) invalidIds.push(i);
     }
   }
 
-  return invalidIDs.reduce((acc, curr) => acc + curr);
+  return invalidIds.reduce((acc, curr) => acc + curr);
 }
