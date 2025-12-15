@@ -3,9 +3,9 @@ import {part2} from './part2';
 import input from './input.txt';
 
 describe('Advent of Code 2025 - Day x', () => {
+  const testInput = `test`;
   describe('part 1', () => {
     test('should output correct from test input', () => {
-      const testInput = `test`;
       expect(part1(testInput)).toBe(-1);
     });
     test('should output correct from input', () => {
@@ -15,7 +15,6 @@ describe('Advent of Code 2025 - Day x', () => {
 
   describe('part 2', () => {
     test('should output correct from test input (part2)', () => {
-      const testInput = `test`;
       expect(part2(testInput)).toBe(-1);
     });
     test('should output correct from input (part2)', () => {
