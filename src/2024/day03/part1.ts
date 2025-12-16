@@ -8,7 +8,6 @@ const mulXY = (input: string) => {
 
 export function part1(input: string): number {
   const instructions = parseInstructions(input);
-  console.log(instructions);
 
   return instructions.reduce((acc, instruction) => {
     return acc + mulXY(instruction);
